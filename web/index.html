@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Axle | Policy Intelligence</title><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./mobile.css">
+</head>
+<body>
+<header><div class="brand"><span class="mark">A</span><span>AXLE</span><i></i><small>POLICY INTELLIGENCE</small></div><div class="live"><b></b> ALL SYSTEMS OPERATIONAL</div></header>
+<main>
+  <section class="hero"><div><div class="eyebrow">LIVE VERIFICATION WORKSPACE</div><h1>Turn insurance documents<br>into <em>decisions.</em></h1><p>Extract policy data, validate coverage, and monitor every renewal—instantly.</p></div><div class="metrics"><div><span id="requests">0</span><small>DOCUMENTS PROCESSED</small></div><div><span id="hitRate">—</span><small>POLICY MATCH RATE</small></div><div><span id="alertsCount">0</span><small>CHANGES DETECTED</small></div></div></section>
+  <section class="workspace">
+    <div class="left panel"><div class="panel-head"><div><span class="step">01</span><b>Source document</b></div><span class="ready">READY</span></div>
+      <div class="tabs"><button data-doc="v1" class="active">Original policy</button><button data-doc="v2">Renewal</button><button data-doc="risky">Underinsured</button></div>
+      <textarea id="document" spellcheck="false"></textarea>
+      <div class="actions"><label class="toggle"><input id="fail" type="checkbox"><span></span> Simulate Slack outage</label><button id="run" class="primary">Run verification <span>→</span></button></div>
+    </div>
+    <div class="right panel"><div class="panel-head"><div><span class="step">02</span><b>Pipeline activity</b></div><span id="latency" class="latency">AWAITING RUN</span></div>
+      <div class="pipeline">
+        <div class="node" data-node="extract"><div class="icon">✦</div><div><b>Document AI</b><small>BEDROCK · EXTRACTION</small></div><span>Idle</span></div><div class="connector"><i></i></div>
+        <div class="node" data-node="validate"><div class="icon">✓</div><div><b>Validation Agent</b><small>RULE · ≥ $100K</small></div><span>Idle</span></div><div class="connector"><i></i></div>
+        <div class="node" data-node="monitor"><div class="icon">⌁</div><div><b>Policy Monitor</b><small>REDIS · CHANGE DIFF</small></div><span>Idle</span></div><div class="connector"><i></i></div>
+        <div class="node" data-node="alert"><div class="icon">#</div><div><b>Slack Alert</b><small>WEBHOOK · DELIVERY</small></div><span>Idle</span></div>
+      </div>
+      <div id="result" class="result empty"><span>◆</span><b>Ready to verify</b><p>Choose a document and run it through the pipeline.</p></div>
+    </div>
+  </section>
+  <section class="lower"><div class="data panel"><div class="panel-head"><div><span class="step">03</span><b>Structured policy record</b></div><span id="cache" class="cache">CACHE —</span></div><div id="fields" class="fields"><p>No extraction yet</p></div></div>
+  <div class="alerts panel"><div class="panel-head"><div><span class="step">04</span><b>Monitoring feed</b></div><button id="recover" hidden>Retry webhook</button></div><div id="feed" class="feed"><div class="feed-empty">No policy changes detected yet.<br><small>Process the original, then the renewal.</small></div></div></div></section>
+  <footer><span><b></b> LOCAL DEMO · NO CREDENTIALS</span><button id="reset">↻ Reset workspace</button></footer>
+</main><script src="./app.js"></script></body></html>

@@ -1,0 +1,12 @@
+@media(max-width:400px){
+  .tabs{padding-left:12px;padding-right:12px}
+  .tabs button{min-width:0;flex:1;padding:8px 5px;font-size:10px}
+  .actions{align-items:flex-end;gap:12px}
+  .toggle{max-width:120px}
+  .primary{padding:12px}
+  .primary span{margin-left:8px}
+  .panel-head{padding-left:14px;padding-right:14px}
+  .metrics small{letter-spacing:.06em}
+  .pipeline{padding-left:3px;padding-right:3px}
+  .connector{width:12px}
+}
